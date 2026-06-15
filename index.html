@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <link rel="icon" type="image/png" href="img/logo.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Material Boa Construção - Tudo para sua Obra</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="header-milenio">
+        <div class="logo-container">
+            <img src="img/logo.png" alt="Material Boa Construção"> 
+            <span class="logo-text">Boa Construção</span>
+        </div>
+
+        <button class="menu-toggle" id="btnMenu" aria-label="Abrir menu">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+
+        <nav class="nav-menu" id="navMenu">
+            <ul>
+                <li><a href="index.html" class="active-link">Início</a></li>
+                <li><a href="loja.html">Produtos</a></li>
+                <li><a href="#vantagens">Vantagens</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+            <div class="nav-buttons">
+    <button id="btnDarkMode" class="btn-dark-mode" aria-label="Alternar Modo Escuro">
+        <i class="fa-solid fa-moon"></i>
+    </button>
+    
+    <a href="#contato" class="btn-nav" id="btnNavDinamico">Pedir Orçamento</a>
+</div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero hero-home">
+            <div class="overlay"></div>
+            <div class="hero-content container">
+                <h1>Do alicerce ao acabamento, <br><span>sua obra em primeiro lugar!</span></h1>
+                <p>Tudo em cimento, ferragens, tijolos, pisos e ferramentas com o melhor preço da região e entrega rápida direto no seu canteiro.</p>
+                <a href="#produtos" class="btn-hero">Ver Catálogo</a>
+            </div>
+        </section>
+
+        <section id="vantagens" class="features">
+            <div class="container">
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="icon"><i class="fa-solid fa-truck-fast"></i></div>
+                        <h3>Entrega Rápida</h3>
+                        <p>Agilidade no envio para que sua obra ou reforma nunca precise ficar parada.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="icon"><i class="fa-solid fa-tags"></i></div>
+                        <h3>Preço Baixo Garantido</h3>
+                        <p>Cobrimos orçamentos comprovados e oferecemos excelentes condições de pagamento.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="icon"><i class="fa-solid fa-user-check"></i></div>
+                        <h3>Atendimento Técnico</h3>
+                        <p>Nossa equipe ajuda você a calcular a quantidade exata de material para evitar desperdícios.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="produtos" class="courses">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Categorias em Destaque</h2>
+                    <p>Encontre os melhores materiais separados por etapas da sua construção</p>
+                </div>
+
+                <div class="courses-grid">
+                    <div class="course-card">
+                        <span class="badge-highlight">Ofertas da Semana</span>
+                        <div class="card-image">
+                            <img src="https://images.unsplash.com/photo-1589939705384-5185137a7f0f?auto=format&fit=crop&w=800&q=80" alt="Material Bruto">
+                        </div>
+                        <div class="card-content">
+                            <span class="tag">Estrutura</span>
+                            <h3>Material Bruto</h3>
+                            <p>Tijolos, blocos, cimento de alta resistência, areia ensacada, brita e ferragens estruturais para fundação e lajes.</p>
+                            <a href="#contato" class="btn-outline-blue">Consultar Preços</a>
+                            <div class="course-actions">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="course-card">
+                        <div class="card-image">
+                            <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=800&q=80" alt="Pisos e Revestimentos">
+                        </div>
+                        <div class="card-content">
+                            <span class="tag">Acabamento</span>
+                            <h3>Pisos & Revestimentos</h3>
+                            <p>Porcelanatos, cerâmicas, argamassas colantes, rejuntes e pastilhas para dar o toque de sofisticação que sua casa merece.</p>
+                            <a href="#contato" class="btn-outline-blue">Ver Opções</a>
+                            <div class="course-actions">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="course-card">
+                        <div class="card-image">
+                            <img src="https://images.unsplash.com/photo-1581166397057-235af2b3c6dd?auto=format&fit=crop&w=800&q=80" alt="Ferramentas e Elétrica">
+                        </div>
+                        <div class="card-content">
+                            <span class="tag">Utilidades</span>
+                            <h3>Ferramentas & Elétrica</h3>
+                            <p>Fios e cabos certificados, disjuntores, ferramentas manuais e elétricas de alta performance para profissionais e reparos.</p>
+                            <a href="#contato" class="btn-outline-blue">Ver Catálogo</a>
+                            <div class="course-actions">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contato" class="cta-section">
+            <div class="container">
+                <h2>Precisa de um Orçamento Rápido?</h2>
+                <p>Envie sua lista de materiais pelo WhatsApp. Respondemos em poucos minutos com as melhores condições e valores para fechar negócio hoje mesmo!</p>
+                <a href="https://wa.me/5581979020121" class="btn-whatsapp" target="_blank">
+                    <i class="fa-brands fa-whatsapp"></i> Enviar Lista pelo WhatsApp 
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Material Boa Construção. Todos os direitos reservados.</p>
+            <p class="contact-info">Cubatão - SP | WhatsApp: (11) 9 9999-9999</p>
+        </div>
+
+        <div id="cardVocacional" class="notificacao-lateral">
+            <div class="notificacao-header">
+                <span><i class="fa-solid fa-calculator"></i> Calculadora de Obra</span>
+                <button type="button" id="btnFecharNotificacao" onclick="document.getElementById('cardVocacional').style.display='none'">&times;</button>
+            </div>
+            <div class="notificacao-body">
+                <p>Não sabe quanto cimento ou piso comprar para o seu cômodo?</p>
+                <a href="#" class="btn-vocacional-link">Falar com Especialista!</a>
+            </div>
+        </div>
+    </footer>
+
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="document.getElementById('loginModal').style.display='none'">&times;</span>
+            <h2>Área do Cliente / Vendedor</h2>
+            <input type="text" placeholder="Usuário ou CPF">
+            <input type="password" placeholder="Senha">
+            <button type="button">Entrar</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        // Mantém o efeito visual de animação ao rolar a página
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        });
+
+        document.querySelectorAll('.course-card, .feature-card').forEach((el) => {
+            el.classList.add('fade-in');
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,876 @@
+/* ==========================================================================
+   MATERIAL BOA CONSTRUÇÃO - ESTILOS OFICIAIS (TOTALMENTE REESTRUTURADO)
+   ========================================================================== */
+
+/* --- 1. VARIÁVEIS DE AMBIENTE E PALETA DE CORES --- */
+:root {
+    --cor-primaria: #D35400;         /* Laranja Tijolo / Telha */
+    --cor-primaria-hover: #A04000;   /* Laranja Escuro para transições */
+    --cor-secundaria: #1A1A1A;       /* Preto Carvão para títulos e destaque */
+    --cor-fundo: #F8F9FA;            /* Cinza Textura Suave para o fundo */
+    --cor-texto: #4A4A4A;            /* Cinza Grafite para legibilidade de leitura */
+    --cor-branca: #FFFFFF;
+    --cor-destaque: #F59E0B;         /* Amarelo Ouro para alertas/promoções */
+    --cor-sucesso: #25D366;          /* Verde Oficial do WhatsApp */
+    --cor-sucesso-hover: #1EBE5D;
+    --sombra-suave: 0 4px 15px rgba(0, 0, 0, 0.05);
+    --sombra-forte: 0 10px 30px rgba(0, 0, 0, 0.12);
+    --transicao: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* --- 2. RESET TOTAL E PADRÕES BASE --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1 0 auto;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+    position: relative;
+    width: 100%;
+}
+
+a {
+    text-decoration: none;
+    transition: var(--transicao);
+}
+
+ul {
+    list-style: none;
+}
+
+h1, h2, h3, h4 {
+    color: var(--cor-secundaria);
+    font-weight: 700;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* --- 3. ESTRUTURA DO CABEÇALHO (HEADER & NAV) --- */
+header, .header-milenio {
+    background-color: var(--cor-branca);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+    width: 100%;
+    border-bottom: 4px solid var(--cor-primaria);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 2rem;
+    min-height: 85px;
+    transition: var(--transicao);
+}
+
+.logo-container, .logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: var(--cor-secundaria);
+    text-transform: uppercase;
+    letter-spacing: -0.5px;
+}
+
+.logo-container img, .logo img {
+    height: 50px;
+    width: auto;
+    object-fit: contain;
+}
+
+.nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 2.5rem;
+}
+
+.nav-menu ul {
+    display: flex;
+    gap: 32px;
+    align-items: center;
+}
+
+.nav-menu ul a {
+    color: var(--cor-secundaria);
+    font-weight: 600;
+    font-size: 0.95rem;
+    position: relative;
+    padding: 4px 0;
+}
+
+.nav-menu ul a:hover, 
+.nav-menu ul a.active-link {
+    color: var(--cor-primaria);
+}
+
+/* --- 4. BOTÕES E COMPONENTES DE INTERAÇÃO --- */
+.nav-buttons {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+/* Botão Alternar Modo Escuro */
+.btn-dark-mode {
+    background: none;
+    border: none;
+    color: var(--cor-secundaria);
+    font-size: 1.3rem;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transicao);
+}
+
+.btn-dark-mode:hover {
+    color: var(--cor-primaria);
+    background-color: rgba(0, 0, 0, 0.05);
+    transform: scale(1.1);
+}
+
+/* Botão Conta do Utilizador (Compatível com classes antigas) */
+.btn-aluno, .btn-outline-blue, .btn-outline {
+    border: 2px solid var(--cor-primaria);
+    color: var(--cor-primaria) !important;
+    background-color: transparent;
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.btn-aluno:hover, .btn-outline-blue:hover, .btn-outline:hover {
+    background-color: var(--cor-primaria);
+    color: var(--cor-branca) !important;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(211, 84, 0, 0.2);
+}
+
+/* Botão Sólido Principal */
+.btn-nav, .btn-solid, .btn-simulacao-injetado {
+    background-color: var(--cor-primaria);
+    color: var(--cor-branca) !important;
+    padding: 12px 22px;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    border: none;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.btn-nav:hover, .btn-solid:hover, .btn-simulacao-injetado:hover {
+    background-color: var(--cor-primaria-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(211, 84, 0, 0.3);
+}
+
+/* Botão de Destaque Call to Action (Hero) */
+.btn-hero, .btn-yellow {
+    background-color: var(--cor-destaque);
+    color: var(--cor-secundaria);
+    padding: 1rem 2.5rem;
+    border-radius: 6px;
+    font-weight: 700;
+    font-size: 1rem;
+    letter-spacing: 0.5px;
+    display: inline-block;
+    text-transform: uppercase;
+    box-shadow: 0 4px 15px rgba(245, 158, 11, 0.2);
+}
+
+.btn-hero:hover, .btn-yellow:hover {
+    background-color: #D97706;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(245, 158, 11, 0.4);
+}
+
+/* Botão de Contacto Direto WhatsApp */
+.btn-whatsapp {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background-color: var(--cor-sucesso);
+    color: var(--cor-branca) !important;
+    padding: 16px 32px;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 1.05rem;
+    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+}
+
+.btn-whatsapp:hover {
+    background-color: var(--cor-sucesso-hover);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 22px rgba(37, 211, 102, 0.5);
+}
+
+/* --- 5. BANNER PRINCIPAL (HERO SECTION) --- */
+.hero {
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--cor-branca);
+    min-height: 450px;
+}
+
+.hero-home {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1920&q=80');
+    height: 75vh;
+}
+
+.overlay {
+    position: absolute;
+    inset: 0;
+    background: transparent; /* Controlado via linear-gradient no próprio background */
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 850px;
+}
+
+.hero h1 {
+    font-size: 3.2rem;
+    line-height: 1.25;
+    margin-bottom: 1.2rem;
+    font-weight: 800;
+    color: var(--cor-branca);
+    letter-spacing: -1px;
+}
+
+.hero h1 span {
+    color: var(--cor-primaria);
+}
+
+.hero p {
+    font-size: 1.15rem;
+    margin-bottom: 2.2rem;
+    color: #E5E7EB;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* --- 6. SEÇÃO DE DIFERENCIAIS (FEATURES) --- */
+.features, .cta-section {
+    padding: 5rem 0;
+    background-color: var(--cor-branca);
+    text-align: center;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2.5rem;
+}
+
+.feature-card {
+    background-color: var(--cor-fundo);
+    padding: 3.5rem 2rem;
+    border-radius: 12px;
+    border: 1px solid #E5E7EB;
+    transition: var(--transicao);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.feature-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--cor-primaria);
+    background-color: var(--cor-branca);
+    box-shadow: var(--sombra-forte);
+}
+
+.feature-card .icon {
+    font-size: 2.8rem;
+    margin-bottom: 1.5rem;
+    color: var(--cor-primaria);
+}
+
+.feature-card h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.75rem;
+}
+
+/* --- 7. GRADE DE CARDS DE PRODUTOS --- */
+.courses, section {
+    padding: 5rem 0;
+    background-color: var(--cor-fundo);
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.section-title h2 {
+    color: var(--cor-secundaria);
+    font-size: 2.2rem;
+    font-weight: 800;
+    margin-bottom: 0.5rem;
+}
+
+.section-title p {
+    color: var(--cor-texto);
+    font-size: 1.05rem;
+}
+
+.courses-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2.5rem;
+}
+
+.course-card {
+    background-color: var(--cor-branca);
+    border-radius: 12px;
+    position: relative;
+    margin-top: 15px;
+    overflow: visible;
+    border: 1px solid #E5E7EB;
+    box-shadow: var(--sombra-suave);
+    transition: var(--transicao);
+    display: flex;
+    flex-direction: column;
+}
+
+.course-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--sombra-forte);
+}
+
+.badge-highlight {
+    position: absolute;
+    top: -16px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #EF4444; /* Destaque promocional encarnado */
+    color: var(--cor-branca);
+    padding: 6px 18px;
+    border-radius: 6px;
+    font-size: 0.75rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    box-shadow: 0 4px 10px rgba(239, 68, 68, 0.3);
+    z-index: 10;
+    white-space: nowrap;
+}
+
+.card-image {
+    width: 100%;
+    aspect-ratio: 16 / 11;
+    overflow: hidden;
+    position: relative;
+    background-color: #E5E7EB;
+    border-radius: 12px 12px 0 0;
+}
+
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transicao);
+}
+
+.course-card:hover .card-image img {
+    transform: scale(1.05);
+}
+
+.card-content {
+    padding: 1.75rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.tag {
+    display: inline-block;
+    align-self: flex-start;
+    padding: 4px 12px;
+    border-radius: 4px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    background-color: var(--cor-secundaria);
+    color: var(--cor-branca);
+    letter-spacing: 0.5px;
+}
+
+.course-card h3 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+}
+
+.course-card p {
+    font-size: 0.92rem;
+    color: var(--cor-texto);
+    margin-bottom: 1.75rem;
+    line-height: 1.55;
+}
+
+.course-actions {
+    margin-top: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.course-actions .btn-outline-blue,
+.course-actions .btn-simulacao-injetado {
+    width: 100%;
+}
+
+/* --- 8. COMPONENTES: CALCULADORA LATERAL E MODAL --- */
+.notificacao-lateral {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 300px;
+    background-color: var(--cor-branca);
+    border-left: 6px solid var(--cor-primaria);
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.15);
+    border-radius: 8px;
+    z-index: 9999;
+    overflow: hidden;
+    animation: slideInRight 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.notificacao-header {
+    background-color: #F8FAFC;
+    padding: 12px 18px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--cor-primaria);
+    border-bottom: 1px solid #E2E8F0;
+}
+
+.notificacao-header button {
+    background: none;
+    border: none;
+    font-size: 1.4rem;
+    cursor: pointer;
+    color: var(--cor-texto);
+    line-height: 1;
+}
+
+.notificacao-body {
+    padding: 18px;
+}
+
+.notificacao-body p {
+    font-size: 0.9rem;
+    margin-bottom: 12px;
+    color: var(--cor-texto);
+}
+
+.btn-vocacional-link {
+    color: var(--cor-primaria);
+    font-weight: 700;
+    font-size: 0.9rem;
+    text-decoration: underline;
+}
+
+.btn-vocacional-link:hover {
+    color: var(--cor-primaria-hover);
+}
+
+/* Modal Estrutural */
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.65);
+    z-index: 10000;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    background-color: var(--cor-branca);
+    padding: 3rem 2rem;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 420px;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+    animation: zoomIn 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.close-btn {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 2rem;
+    font-weight: 400;
+    color: var(--cor-texto);
+    cursor: pointer;
+    line-height: 1;
+}
+
+.modal-content h2 {
+    font-size: 1.6rem;
+    margin-bottom: 1.5rem;
+}
+
+.modal-content input {
+    width: 100%;
+    padding: 14px;
+    margin: 8px 0 16px;
+    border: 1px solid #D1D5DB;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    outline: none;
+    transition: var(--transicao);
+}
+
+.modal-content input:focus {
+    border-color: var(--cor-primaria);
+    box-shadow: 0 0 0 3px rgba(211, 84, 0, 0.15);
+}
+
+.modal-content button {
+    width: 100%;
+    padding: 14px;
+    background-color: var(--cor-primaria);
+    color: var(--cor-branca);
+    border: none;
+    border-radius: 6px;
+    font-weight: 700;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: var(--transicao);
+}
+
+.modal-content button:hover {
+    background-color: var(--cor-primaria-hover);
+}
+
+/* --- 9. RODAPÉ (FOOTER) --- */
+footer {
+    background-color: var(--cor-secundaria);
+    color: #E2E8F0;
+    padding: 3rem 0;
+    text-align: center;
+    border-top: 4px solid var(--cor-primaria);
+    width: 100%;
+    font-size: 0.95rem;
+}
+
+footer .contact-info {
+    margin-top: 8px;
+    color: #94A3B8;
+    font-size: 0.88rem;
+}
+
+/* --- 10. ANIMAÇÕES --- */
+@keyframes slideInRight {
+    from { transform: translateX(120%); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes zoomIn {
+    from { transform: scale(0.85); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+.fade-in {
+    opacity: 0;
+    transform: translateY(25px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* --- 11. RESPONSIVIDADE (MEDIA QUERIES CONSOLIDADO) --- */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.8rem;
+    color: var(--cor-primaria);
+    cursor: pointer;
+}
+
+@media (max-width: 992px) {
+    .nav-menu ul { gap: 20px; }
+    .hero h1 { font-size: 2.8rem; }
+}
+
+@media (max-width: 768px) {
+    header, .header-milenio {
+        padding: 0.5rem 1.5rem;
+        min-height: 75px;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-menu {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: var(--cor-branca);
+        padding: 1.5rem;
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.08);
+        z-index: 999;
+        border-top: 1px solid #F1F5F9;
+    }
+
+    .nav-menu.active {
+        display: flex;
+    }
+
+    .nav-menu ul {
+        flex-direction: column;
+        gap: 18px;
+        padding-bottom: 1.5rem;
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-buttons {
+        flex-direction: column;
+        width: 100%;
+        gap: 10px;
+    }
+
+    .btn-aluno, .btn-outline-blue, .btn-solid, .btn-nav, .btn-dark-mode {
+        width: 100%;
+        text-align: center;
+        justify-content: center;
+    }
+
+    .btn-dark-mode {
+        border: 1px solid #E2E8F0;
+        border-radius: 6px;
+        padding: 10px;
+    }
+
+    .hero {
+        padding: 5rem 0;
+        height: auto;
+    }
+
+    .hero h1 {
+        font-size: 2.1rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .notificacao-lateral {
+        bottom: 15px !important;
+        right: 5% !important;
+        left: 5% !important;
+        width: 90% !important;
+        transform: none !important;
+        animation: slideInUp 0.4s ease;
+    }
+}
+
+@keyframes slideInUp {
+    from { transform: translateY(100%); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+/* --- 12. CONFIGURAÇÃO COMPLETA DO MODO ESCURO (DARK MODE CORRIGIDO) --- */
+body.dark-mode {
+    background-color: #121212;
+    color: #E0E0E0;
+}
+
+/* FIXAÇÃO DO BUG: O seletor .container foi completamente removido do reset de fundo */
+body.dark-mode section, 
+body.dark-mode .features, 
+body.dark-mode .courses,
+body.dark-mode .cta-section {
+    background-color: #121212;
+}
+
+body.dark-mode header, 
+body.dark-mode .header-milenio {
+    background-color: #1E1E1E;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+    border-bottom: 4px solid var(--cor-primaria);
+}
+
+body.dark-mode .nav-menu {
+    background-color: #1E1E1E;
+}
+
+body.dark-mode .nav-menu ul a,
+body.dark-mode .logo-text,
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode h4 {
+    color: var(--cor-branca);
+}
+
+body.dark-mode p {
+    color: #A0AEC0;
+}
+
+body.dark-mode .feature-card, 
+body.dark-mode .course-card, 
+body.dark-mode .modal-content,
+body.dark-mode .notificacao-lateral {
+    background-color: #1E1E1E;
+    border-color: #2D3748;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-mode .notificacao-header {
+    background-color: #2D3748;
+    border-bottom: 1px solid #4A5568;
+    color: var(--cor-branca);
+}
+
+body.dark-mode .notificacao-header button {
+    color: var(--cor-branca);
+}
+
+body.dark-mode .modal-content input {
+    background-color: #2D3748;
+    border-color: #4A5568;
+    color: var(--cor-branca);
+}
+
+body.dark-mode .btn-dark-mode {
+    color: #F1C40F; /* Altera para cor amarela vibrante imitando o sol */
+}
+
+body.dark-mode .btn-dark-mode:hover {
+    background-color: rgba(255, 255, 255, 0.08);
+}
+
+/* --- 13. CONFIGURAÇÕES DE IMPRESSÃO --- */
+@media print {
+    header, footer, .notificacao-lateral, .hero, .btn-whatsapp, #btnDarkMode {
+        display: none !important;
+    }
+    body {
+        background: white;
+        padding: 0;
+        color: black;
+    }
+    .course-card {
+        box-shadow: none;
+        border: 1px solid #CCC;
+        page-break-inside: avoid;
+    }
+}
+
+/* Layout estilo Marketplace */
+.marketplace-container {
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    gap: 20px;
+    padding: 20px;
+}
+
+.filtros-laterais {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+}
+
+.produto-card-marketplace {
+    border: 1px solid #eee;
+    padding: 15px;
+    text-align: center;
+    transition: 0.3s;
+    background: white;
+}
+
+.produto-card-marketplace:hover {
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.preco {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--cor-secundaria);
+    margin: 10px 0;
+}
+
+.tag-promocao {
+    background: #e74c3c;
+    color: white;
+    padding: 2px 8px;
+    font-size: 0.8rem;
+    border-radius: 4px;
+}
+
+/* Correção do Modo Escuro para o Marketplace */
+body.dark-mode .filtros-laterais,
+body.dark-mode .produto-card-marketplace {
+    background-color: #1E1E1E !important;
+    border-color: #333 !important;
+    color: #E0E0E0 !important;
+}
+
+body.dark-mode .produto-card-marketplace .preco {
+    color: #FFFFFF !important;
+}
+

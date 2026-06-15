@@ -1,0 +1,205 @@
+/* ==========================================================================
+   OTHER.CSS - ESTILOS EXCLUSIVOS PARA A LOJA (MARKETPLACE)
+   ========================================================================== */
+
+/* 1. ESTRUTURA PRINCIPAL (Barra Lateral Esquerda + Grid na Direita) */
+.marketplace-container {
+    display: grid !important;
+    grid-template-columns: 260px 1fr !important;
+    gap: 30px !important;
+    padding: 40px 24px !important;
+    max-width: 1200px !important;
+    margin: 0 auto !important;
+    align-items: start !important;
+}
+
+/* Painel lateral de Categorias e Preços */
+.filtros-laterais {
+    background: #FFFFFF;
+    padding: 24px;
+    border-radius: 8px;
+    border: 1px solid #e5e7eb;
+    position: sticky; /* Faz os filtros acompanharem a tela ao rolar para baixo */
+    top: 100px;
+}
+
+/* ==========================================================================
+   2. O SEGREDO DAS 3 COLUNAS
+   ========================================================================== */
+.marketplace-grid {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important; /* Trava em exatamente 3 colunas */
+    gap: 25px !important;
+    width: 100% !important;
+}
+
+/* ==========================================================================
+   3. O CARTÃO DE PRODUTO & ALINHAMENTO DO BOTÃO
+   ========================================================================== */
+.produto-card-marketplace {
+    border: 1px solid #e5e7eb;
+    padding: 20px;
+    border-radius: 8px;
+    background: #FFFFFF;
+    transition: all 0.3s ease;
+    
+    /* MÁGICA DO ALINHAMENTO */
+    display: flex !important;
+    flex-direction: column !important;
+    height: 100% !important; /* Força todos os cards da mesma linha a terem o mesmo tamanho */
+}
+
+.produto-card-marketplace:hover {
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    transform: translateY(-5px);
+}
+
+/* Imagens dos produtos padronizadas */
+.produto-card-marketplace img {
+    width: 100%;
+    height: 180px;
+    object-fit: contain; /* Não deixa a imagem esticar e ficar feia */
+    margin-bottom: 15px;
+    background-color: #fff;
+}
+
+/* Título */
+.produto-card-marketplace p {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #4A4A4A;
+    margin-bottom: 10px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* Corta o título se for gigante (passar de 2 linhas) */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* Preço */
+.produto-card-marketplace .preco {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: #D35400; /* Cor primária da loja */
+    margin: 5px 0 10px 0;
+}
+
+/* Tag de Promoção/Desconto */
+.tag-promocao {
+    background: #e74c3c;
+    color: white;
+    padding: 4px 10px;
+    font-size: 0.75rem;
+    border-radius: 4px;
+    font-weight: 700;
+    display: inline-block;
+    margin-bottom: 15px;
+    width: fit-content;
+}
+
+/* BOTÃO DE COMPRAR SEMPRE NO FUNDO */
+.produto-card-marketplace .btn-nav {
+    width: 100% !important;
+    margin-top: auto !important; /* Este comando joga o botão lá para baixo e preenche o vazio! */
+    background-color: #D35400;
+    color: #FFF;
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+
+.produto-card-marketplace .btn-nav:hover {
+    background-color: #A04000;
+}
+
+
+/* ==========================================================================
+   4. RESPONSIVIDADE (CELULARES E TABLETS)
+   ========================================================================== */
+
+/* Em tablets, passa de 3 para 2 colunas */
+@media (max-width: 992px) {
+    .marketplace-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+}
+
+/* Em celulares, joga os filtros pra cima e mantém 2 produtos lado a lado */
+@media (max-width: 768px) {
+    .marketplace-container {
+        grid-template-columns: 1fr !important;
+        padding: 20px 15px !important;
+    }
+    
+    .filtros-laterais {
+        position: relative;
+        top: 0;
+    }
+
+    .marketplace-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 15px !important;
+    }
+
+    .produto-card-marketplace {
+        padding: 15px;
+    }
+
+    .produto-card-marketplace img {
+        height: 130px; /* Diminui a foto pra caber no celular */
+    }
+
+    .produto-card-marketplace .preco {
+        font-size: 1.3rem;
+    }
+}
+
+/* Em celulares muito pequenos, fica só 1 coluna */
+@media (max-width: 480px) {
+    .marketplace-grid {
+        grid-template-columns: 1fr !important;
+    }
+}
+
+/* ==========================================================================
+   5. MODO ESCURO PARA O MARKETPLACE
+   ========================================================================== */
+
+/* Pinta o fundo e as bordas do painel lateral */
+body.dark-mode .filtros-laterais {
+    background-color: #1E1E1E !important;
+    border-color: #333 !important;
+    color: #E0E0E0 !important;
+}
+
+body.dark-mode .filtros-laterais h3 {
+    color: #FFFFFF !important;
+}
+
+/* Pinta os cartões de produto */
+body.dark-mode .produto-card-marketplace {
+    background-color: #1E1E1E !important;
+    border-color: #333 !important;
+}
+
+/* Muda a cor do texto do produto para um cinzento claro/branco */
+body.dark-mode .produto-card-marketplace p {
+    color: #E2E8F0 !important;
+}
+
+/* Deixa o preço branco e vibrante no modo escuro */
+body.dark-mode .produto-card-marketplace .preco {
+    color: #FFFFFF !important;
+}
+
+/* Ajusta o fundo da imagem para não ficar um quadrado branco forte se a imagem for transparente */
+body.dark-mode .produto-card-marketplace img {
+    background-color: #1E1E1E !important;
+}
+
